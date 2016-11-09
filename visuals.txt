@@ -1,0 +1,17 @@
+Visuals
+- Main page (with HTML / CSS for handling form input)
+- Same main page will display the quotes
+
+API's (What interactions with the DB will be necessary)
+- Server 
+- Handling Various Routes
+  - Creating Quotes (POST)
+  - Viewing quotes (GET)
+  - Updating quotes (PUT)
+  - Deleting quotes (DELETE)
+- Connection to a Database 
+- Code for giving it Handlebars "powers" (Templating engine)
+
+Database Setup
+- Schema (basic structure)
+- Initial Rows 
