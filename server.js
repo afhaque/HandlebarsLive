@@ -4,6 +4,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var mysql = require("mysql");
+var exphbs = require("express-handlebars");
 
 // Start the Express App
 // ===================================================================
@@ -13,6 +14,12 @@ var app = express();
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
+// Incorporate Handlebars
+app.engine("handlebars", exphbs({
+  defaultLayout: "main"
+}));
+app.set("view engine", "handlebars");
 
 // Connect to MySQL
 // ===================================================================
@@ -43,7 +50,7 @@ app.get("/", function( req, res ) {
     if (err) throw err;
     
     console.log(data);
-    res.send("DATA LOADED");
+    res.render("index", { quotes: data})
   })
 
 });
@@ -65,25 +72,25 @@ app.post("/", function( req, res ) {
 
 
 // Put Route (To update quotes)
-app.get("/", function( req, res ) {
+app.update("/", function( req, res ) {
 
-  connection.query("SELECT * FROM QUOTES;", function(err, data) {
-    if (err) throw err;
+  // connection.query("SELECT * FROM QUOTES;", function(err, data) {
+  //   if (err) throw err;
     
-    console.log(data);
-    res.send("DATA LOADED");
-  })
+  //   console.log(data);
+  //   res.send("DATA LOADED");
+  // })
 
 });
 // Delete Route (To delete quotes)
-app.get("/", function( req, res ) {
+app.delete("/", function( req, res ) {
 
-  connection.query("SELECT * FROM QUOTES;", function(err, data) {
-    if (err) throw err;
+  // connection.query("SELECT * FROM QUOTES;", function(err, data) {
+  //   if (err) throw err;
     
-    console.log(data);
-    res.send("DATA LOADED");
-  })
+  //   console.log(data);
+  //   res.send("DATA LOADED");
+  // })
 
 });
 

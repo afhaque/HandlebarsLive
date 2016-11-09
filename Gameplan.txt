@@ -1,0 +1,23 @@
+1. Gameplan
+  
+    - Visuals (Creation) | Main page (Same Page That display both)
+    - APIs for interactions
+    - Server Handles routes
+    - Creating Posts, Gets, Put, Delete
+
+
+
+2. Steps completed so far 
+
+    - NPM Packages created and downloaded
+    - NPM init
+    - Created a server.js file
+    - Dependencies started
+    - Started express app
+    - Made the server listen and tested it
+    - Connected server to mysql
+    - Started handling of routes
+    - Tested a GET / POST 
+  
+
+3. Why am I doing this?
